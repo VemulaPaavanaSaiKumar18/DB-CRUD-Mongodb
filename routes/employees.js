@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 const Employees = require("../dbconfig/model/userSchema");
-router.get("/data", function (req, res, next) {
+router.get("/", function (req, res, next) {
   res.send("hi employees");
 });
 router.get("/all", async (req, res) => {
@@ -14,7 +14,7 @@ router.get("/all", async (req, res) => {
   } catch (err) {
     res.json({
       Status: 500,
-      error: "api error" + err,
+      error: "server error" + err,
     });
   }
 });
@@ -28,8 +28,8 @@ router.get("/:id", async (req, res) => {
     });
   } catch (err) {
     res.json({
-      Status: 500,
-      error: "Error" + err,
+      Status: 404,
+      error: "Not found",
     });
   }
 });
@@ -51,7 +51,7 @@ router.post("/", async (req, res) => {
   } catch (err) {
     res.json({
       Status: 500,
-      error: "Error" + err,
+      error: "server error" + err,
     });
   }
 });
@@ -72,7 +72,7 @@ router.put("/:id", async (req, res) => {
   } catch (err) {
     res.json({
       Status: 500,
-      error: "Error" + err,
+      error: "server error" + err,
     });
   }
 });
@@ -86,8 +86,8 @@ router.delete("/:id", async (req, res) => {
     });
   } catch (err) {
     res.json({
-      Status: 500,
-      error: "not deleted",
+      Status: 404,
+      error: "not found",
     });
   }
 });
