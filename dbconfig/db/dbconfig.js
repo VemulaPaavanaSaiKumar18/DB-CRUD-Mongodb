@@ -7,3 +7,14 @@ mongoose.connect("mongodb://localhost:27017/company", (err, res) => {
     console.log("connected to DB");
   }
 });
+
+// const connectDb = async () => {
+//   let db = await mongoose.connect("mongodb://localhost:7017/company");
+// };
+
+// try {
+//   connectDb();
+//   console.log("connected DB");
+// } catch (err) {
+//   console.log("error", err);
+// }

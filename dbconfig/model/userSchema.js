@@ -2,6 +2,14 @@ let mongooes = require("mongoose");
 let schema = mongooes.Schema;
 
 const Employees = new schema({
+  email: {
+    type: String,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
   adhaarNumber: {
     type: Number,
     required: true,
