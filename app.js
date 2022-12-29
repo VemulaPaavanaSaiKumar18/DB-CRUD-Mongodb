@@ -40,4 +40,5 @@ app.use(function (err, req, res, next) {
 });
 
 let db = require("./dbconfig/db/dbconfig");
+
 module.exports = app;

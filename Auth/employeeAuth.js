@@ -5,7 +5,7 @@ const authorizer = (req, res, next) => {
     let authToken = req.headers.authorization.split(" ")[1];
     if (authToken) {
       let decoded = jwt.verify(authToken, "sampleSecret");
-      req.user = decoded;
+      req.employees = decoded;
       return next();
     } else {
       res.status(401).send("un authorized");
